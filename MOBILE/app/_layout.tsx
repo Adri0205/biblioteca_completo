@@ -16,7 +16,9 @@ function RootNavigator() {
     if (!isAuthenticated && !inAuthScreen) {
       router.replace('/login');
     } else if (isAuthenticated && inAuthScreen) {
-      router.replace('/');
+      router.replace('/(tabs)');
+    } else if (isAuthenticated && segments[0] === undefined) {
+      router.replace('/(tabs)');
     }
   }, [isAuthenticated, isLoading, segments]);
 
@@ -30,8 +32,12 @@ function RootNavigator() {
 
   return (
     <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="login" />
       <Stack.Screen name="index" />
+      <Stack.Screen name="login" />
+      <Stack.Screen name="(tabs)" />
+      <Stack.Screen name="libro" />
+      <Stack.Screen name="prestamo" />
+      <Stack.Screen name="+not-found" />
     </Stack>
   );
 }
