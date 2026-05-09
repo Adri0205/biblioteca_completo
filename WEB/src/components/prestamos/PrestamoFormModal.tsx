@@ -1,4 +1,5 @@
-import { useState, useEffect, FormEvent } from 'react';
+import { useState, useEffect } from 'react';
+import type { FormEvent } from 'react';
 import { X, Search } from 'lucide-react';
 import { getUsuarios } from '../../api/usuarios';
 import { getLibros } from '../../api/libros';
